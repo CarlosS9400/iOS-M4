@@ -23,6 +23,14 @@ struct RecipeDetailView: View {
                     .resizable()
                     .scaledToFill()
                 
+                // MARK: Recipe Title
+                Text(recipe.name)
+                    .bold()
+                    .padding(.leading)
+                    .padding([.bottom, .top], 20)
+                    .font(.largeTitle)
+                
+                
                 // MARK: Serving Size Picker
                 VStack{
                     Text("Select Serving Size:")
@@ -68,7 +76,7 @@ struct RecipeDetailView: View {
             }
             
         }
-        .navigationBarTitle(recipe.name)
+        
     }
 }
 
