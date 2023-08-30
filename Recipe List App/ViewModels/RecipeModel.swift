@@ -27,6 +27,7 @@ class RecipeModel: ObservableObject {
         var wholePortions = 0
         
         if ingredient.num != nil {
+            
             numerator *= targetServingSize
             denominator *= servingSize
             
@@ -34,18 +35,20 @@ class RecipeModel: ObservableObject {
             
             numerator /= divisor
             denominator /= divisor
-        }
-        
-        if numerator >= denominator {
-            wholePortions = numerator / denominator
-            numerator = numerator % denominator
             
-            portion += String(wholePortions)
-        }
-        
-        if numerator > 0 {
-            portion += wholePortions > 0 ? " " : ""
-            portion += "\(numerator)/\(denominator)"
+            
+            if numerator >= denominator {
+                wholePortions = numerator / denominator
+                numerator = numerator % denominator
+                
+                portion += String(wholePortions)
+            }
+            
+            if numerator > 0 {
+                portion += wholePortions > 0 ? " " : ""
+                portion += "\(numerator)/\(denominator)"
+            }
+            
         }
         
         if var unit = ingredient.unit {
