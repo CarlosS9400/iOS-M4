@@ -49,7 +49,7 @@ struct RecipeListView: View {
                     }
                 }
             }
-            .padding(.leading)
+            .padding(.leading, 20)
             .navigationBarHidden(true)
         }
     }
